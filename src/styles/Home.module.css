@@ -1,0 +1,68 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--light-gray);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.title svg {
+  margin-right: 0.5rem;
+}
+
+/* Card Styling */
+.cardContainer {
+  background-color: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.iconWrapper {
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.accessButton {
+  display: inline-block;
+  background-color: var(--green);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.accessButton:hover {
+  background-color: #156d44;
+}

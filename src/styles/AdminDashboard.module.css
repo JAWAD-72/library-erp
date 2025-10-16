@@ -1,0 +1,220 @@
+/* General Dashboard Layout */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e0f2f7; /* Light blue background */
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headerTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.logoutButton {
+  background-color: #dc3545; /* Red logout button */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoutButton:hover {
+  background-color: #c82333;
+}
+
+/* Navigation Tabs */
+.navTabs {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: fit-content;
+}
+
+.navTab {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.navTab:hover {
+  color: #333;
+}
+
+.navTab.active {
+  background-color: #007bff; /* Blue active tab */
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Overview Section Layout */
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summaryCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.cardValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.cardSubtitle {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.cardIcon {
+  color: #007bff; /* Default blue for icons */
+}
+
+/* Specific Card Overrides */
+.totalDues .cardIcon { color: #ffc107; } /* Yellow for Dues */
+.totalReceived .cardIcon { color: #28a745; } /* Green for Received */
+.availableBalance .cardIcon { color: #17a2b8; } /* Teal for Balance */
+
+/* Financial Overview & Student Activity Panels */
+.panelTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.panelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panelItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+.panelItemValue {
+  font-weight: 500;
+}
+
+.panelItem.income .panelItemValue { color: #28a745; } /* Green for Income */
+.panelItem.expenses .panelItemValue { color: #dc3545; } /* Red for Expenses */
+.panelItem.dues .panelItemValue { color: #ffc107; } /* Yellow for Dues */
+.panelItem.balance .panelItemValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #007bff; /* Blue for Net Balance */
+}
+
+/* Quick Actions */
+.quickActionsContainer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quickActionsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.quickActionsSubtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.quickActionButtonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+
+.quickActionButton {
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.quickActionButton.blue { background-color: #007bff; }
+.quickActionButton.blue:hover { background-color: #0056b3; }
+
+.quickActionButton.green { background-color: #28a745; }
+.quickActionButton.green:hover { background-color: #1e7e34; }
+
+.quickActionButton.orange { background-color: #ffc107; }
+.quickActionButton.orange:hover { background-color: #e0a800; }
+.quickActionButton.orange { color: #333; } 
+
+.quickActionButton.purple { background-color: #6f42c1; } 
+.quickActionButton.purple:hover { background-color: #563198; }
