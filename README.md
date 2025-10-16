@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📚 Library Account Management System (Library ERP)
+A full-stack administrative dashboard built with Next.js and Supabase for managing essential library operations, including student registration, financial transactions, and comprehensive reporting.
 
-## Getting Started
+Project Description (What to use on the GitHub page)
+Suggested Short Description:
 
-First, run the development server:
+Full-stack ERP dashboard built with Next.js and Supabase for managing student accounts, fees, and expenses. Features secure, multi-user authentication with enforced data segregation (Row Level Security).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🛠️ Tech Stack and Features
+Technology Overview
+This application is built on a modern serverless stack. We use Next.js 14+ (App Router) for the entire application (frontend and backend APIs) and rely on Supabase as the primary data store and authentication provider. This setup ensures that the application is secure, scalable, and offers true data segregation, meaning every Admin can only access the records they personally created.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Core Features
+Authentication: Secure registration and login using Email and Password.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Student Management: Complete CRUD operations (Add, View, Edit, Delete) for student records, with real-time balance tracking.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Financial Management: Dedicated sections for recording Payments and Expenses, with calculated summaries for Income, Expenses, and Net Balance.
 
-## Learn More
+Data Integrity: Payments and Expenses are linked via user-defined IDs and recorded to the database.
 
-To learn more about Next.js, take a look at the following resources:
+Reporting: A functional backend API route (/api/report) that fetches consolidated data from all tables and generates a comprehensive, downloadable CSV file for analytics.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔒 Data Security and Segregation (Key Selling Point)
+The system is designed for multiple Admin users, where data privacy is paramount.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+User Isolation: Data visibility is strictly limited based on the user_id of the logged-in Admin.
 
-## Deploy on Vercel
+Row Level Security (RLS): This security feature is fully enabled on the students, payments, and expenses tables. All database queries are automatically filtered by Supabase, ensuring that a new user logs into a dashboard with zero records, and existing users can only see their own previously entered data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⚙️ Setup Instructions
+To get the project running locally:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clone the Repo: Download the source code to your machine.
+
+Install Dependencies: Run npm install in the project root.
+
+Supabase Setup: Create a new Supabase project and get your API URL and anon key.
+
+Environment Variables: Create a .env.local file in the project root with your credentials:
+
+Code snippet
+
+NEXT_PUBLIC_SUPABASE_URL="YOUR_URL"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_ANON_KEY"
+Run SQL Policies: Ensure the RLS policies for SELECT, INSERT, and DELETE (using the auth.uid() = user_id condition) are active on your students, payments, and expenses tables.
+
+Start Dev Server: Run npm run dev.
+
+The application will now be live at http://localhost:3000.
